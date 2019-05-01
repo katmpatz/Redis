@@ -1,0 +1,6 @@
+<datasources Repository=”Redis”>
+	<datasource name=”EXsource” id=”2” type=”excel”>
+	<filename>cust_transactions.xlsx</filename>
+	<path>.</path>
+	</datasource>
+</datasources>

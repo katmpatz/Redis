@@ -1,0 +1,7 @@
+<datasources Repository=”SomeName”>
+	<datasource name=”CSsource” id=”3” type=”csv”>
+	<filename>cust_transactions.csv</filename>
+	<path>.</path>
+	<delimiter>,</delimiter>
+	</datasource>
+</datasources>

@@ -1,0 +1,10 @@
+<datasources Repository=”Redis”>
+	<datasource name=”DBsource” id=”1” type=”db”>
+	<dbconnect>
+		<username>root</username>
+		<password>********</password>
+		<request string>
+		<database>
+	</dbconnect>
+	</datasource>
+</datasources>
