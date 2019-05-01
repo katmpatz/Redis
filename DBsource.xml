@@ -2,9 +2,9 @@
 	<datasource name=”DBsource” id=”1” type=”db”>
 	<dbconnect>
 		<username>root</username>
-		<password>********</password>
+		<password>your password</password>
 		<request string>
-		<database>
+		<database>klstore
 	</dbconnect>
 	</datasource>
 </datasources>
