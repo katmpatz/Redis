@@ -18,7 +18,7 @@ import pandas as pd
 import mysql.connector
 from mysql.connector import Error
 
-# step 2: define our connection information for Redis
+# define our connection information for Redis
 # Replaces with your configuration information
 redis_host = "localhost"
 redis_port = 6379
@@ -64,7 +64,7 @@ def create_KLStore_excel (name, data_source, query_string, position1, position2,
 
 def create_KLStore_csv (name, data_source, query_string, position1, position2, direction):
 
-    # step 3: create the Redis Connection object
+    # create the Redis Connection object
     try:
         # The decode_repsonses flag here directs the client to convert the responses from Redis into Python strings
         # using the default encoding utf-8.  This is client specific.
@@ -100,7 +100,7 @@ def create_KLStore_csv (name, data_source, query_string, position1, position2, d
 
 def create_KLStore_db (name, data_source, query_string, position1, position2, direction):
 
-    # step 3: create the Redis Connection object
+    # create the Redis Connection object
     try:
         # The decode_repsonses flag here directs the client to convert the responses from Redis into Python strings
         # using the default encoding utf-8.  This is client specific.
@@ -145,7 +145,6 @@ def create_KLStore_db (name, data_source, query_string, position1, position2, di
 
     except Exception as e:
         print(e)
-
 
 if __name__ == '__main__':
     #create_KLStore_excel("k1","EXsource.xml","Sheet1",1,2,1)
