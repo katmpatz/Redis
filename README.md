@@ -1,19 +1,21 @@
 # Redis
-##Key-Value Stores
+# Key-Value Stores
 ###### Project for _Big Data Management Systems_ course
 
-**Aim**
+## Aim
+
 Create key-value stores and implement in Python some functions/methods that get one or more KL stores and “return” (or update)
 a KL store.
 
-**How many files are included?**
+## How many files are included?
+
 There are 12 files.
 -3 xml files
 -6 python files
 -2 csvs
 -1 excel
 
-**What does each file do?**
+## What does each file do?
 
 **Xml files**
 
@@ -51,3 +53,4 @@ This file aggregates each list of a kl store according to the specified aggregat
 **projSel_klstore.py**
 
 This file joins 2 or more kl stores.
+
