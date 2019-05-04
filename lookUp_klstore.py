@@ -29,11 +29,12 @@ def lookUp_klstore (name1, name2):
             # i is for index in list
             i = -1
             # get every value of key
-            for value in r.lrange(key,0,-1):
-                # update every value of the key by calling function func that returns a string
+            for value in r.lrange(key,0,-1)
                 i = i + 1
+                # delete the value of key
                 r.lrem(key,i,value)
                 for value2 in r.lrange(name2 + ':' + value,0,-1):
+                    # add the values of name2 klstore in name1klstore
                     r.lpush(key,value2)
 
     except Exception as e:
@@ -41,4 +42,3 @@ def lookUp_klstore (name1, name2):
 
 if __name__ == '__main__':
     lookUp_klstore('k1','k2')
-    #apply_klstore('k2',add_AB_in_each_value)
