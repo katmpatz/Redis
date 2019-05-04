@@ -23,7 +23,7 @@ The aim of xml files is to connect python with 3 data sources:
 
 1. Csv (CSsource.xml)
 2. Excel (EXsource.xml)
-3. Database (DBxourse.xml)
+3. Database (DBsourse.xml)
 
 **Csvs and excel**
 
@@ -53,4 +53,46 @@ This file aggregates each list of a kl store according to the specified aggregat
 **projSel_klstore.py**
 
 This file joins 2 or more kl stores.
+
+## Getting started
+
+Would you like to install Hom-e and run it locally? Easy-peasy! The only thing that you have to do is to follow our instructions and everything will work properly on your machine!
+
+## Getting started
+
+The project is running on Linux.
+
+**Installation**
+
+Run the following commands on your terminal to install what is needed.
+
+```
+sudo apt install python-pip
+pip install redis
+pip install bs4
+pip install lxml
+pip install xlrd
+pip install mysql-connector-python
+git commit
+```
+You can use the SQL database that you want. We recommend [Mysql] (https://www.mysql.com/).
+
+**How to run the project?**
+
+After installing the above requirements then:
+
+1. Clone this repository
+2. Create a database in your SQL database 
+4. Import the _import to mysql.csv_ in it
+5. Change the file DBsource:
+    - fill in the tags
+        - username 	```<username>your username</username>```
+        - password  ```<password>your password</password>```
+        - database name ```<database> your database name```
+6. To run each .py file you have to write in your terminal  ```python create_klstore.py```in your project directory. 
+**First run the create_klstore.py file to create the klstores.**
+
+Voila!!! :blush:
+
+
 
