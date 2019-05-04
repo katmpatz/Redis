@@ -58,7 +58,7 @@ This file joins 2 or more kl stores.
 
 Would you like to install Hom-e and run it locally? Easy-peasy! The only thing that you have to do is to follow our instructions and everything will work properly on your machine!
 
-## Getting started
+## Linux
 
 The project is running on Linux.
 
