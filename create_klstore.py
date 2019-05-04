@@ -15,8 +15,8 @@
 import redis
 from bs4 import BeautifulSoup
 import pandas as pd
-import mysql.connector
-from mysql.connector import Error
+# import mysql.connector
+# from mysql.connector import Error
 
 # define our connection information for Redis
 # Replaces with your configuration information
@@ -151,5 +151,5 @@ if __name__ == '__main__':
     create_KLStore_excel("k2","EXsource.xml","Sheet1",1,2,2)
     create_KLStore_csv("k2","CSsource.xml",None,1,2,2)
     create_KLStore_csv("k1","CSsource.xml",None,1,2,1)
-    create_KLStore_db ("k1", "DBsource.xml", 'SELECT * FROM cust_transactions', None,None, 1)
-    create_KLStore_db ("k2", "DBsource.xml", 'SELECT * FROM cust_transactions', None,None, 2)
+    # create_KLStore_db ("k1", "DBsource.xml", 'SELECT * FROM cust_transactions', None,None, 1)
+    # create_KLStore_db ("k2", "DBsource.xml", 'SELECT * FROM cust_transactions', None,None, 2)
