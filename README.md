@@ -89,7 +89,7 @@ After installing the above requirements then:
         - username 	```<username>your username</username>```
         - password  ```<password>your password</password>```
         - database name ```<database> your database name```
-6. To run each .py file you have to write in your terminal  ```python create_klstore.py```in your project directory. 
+6. To run each .py file you have to write in your terminal  ```python thefilethatyouwant_klstore.py```in your project directory. 
 **First run the create_klstore.py file to create the klstores.**
 
 Voila!!! :blush:
