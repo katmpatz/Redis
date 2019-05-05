@@ -79,7 +79,8 @@ def projsel_klstore(output_name, klstores_names, expression):
         print(e)
 
 if __name__ == '__main__':
-    # create_klstores('ks1', kl_store1)
-    # create_klstores('ks2', kl_store2)
-    # create_klstores('ks3', kl_store3)
+    #create three klstores based on the examle
+    create_klstores('ks1', kl_store1)
+    create_klstores('ks2', kl_store2)
+    create_klstores('ks3', kl_store3)
     projsel_klstore('new_klstore', ['ks1','ks2','ks3'], "##key <> 't22' and ##age > 90" )

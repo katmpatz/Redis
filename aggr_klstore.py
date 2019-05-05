@@ -33,7 +33,7 @@ def aggr_klstore (name1, aggr, func):
         # get each key of keys
         for key in keys:
             list = r.lrange(key,0,-1)
-            #transform string values in to integers
+            #transform string values into integers
             numbers = [int(v) for v in list]
             i = -1
             for value in r.lrange(key,0,-1):

@@ -44,15 +44,15 @@ This file gets a KL store in Redis named <name1> and a python function and appli
 
 **lookUp_klstore.py**
 
-This file gets 2 klstores and transform the one with the values of the other. 
+This file gets 2 klstores and transform the one with the values of the other.
 
 **aggr_klstore.py**
 
-This file aggregates each list of a kl store according to the specified aggregate. 
+This file aggregates each list of a kl store according to the specified aggregate.
 
 **projSel_klstore.py**
 
-This file joins 2 or more kl stores.
+This file joins 2 or more kl stores and applies a filtering condition for the new klstore.
 
 ## Getting started
 
@@ -82,14 +82,16 @@ You can use the SQL database that you want. We recommend [Mysql] (https://www.my
 After installing the above requirements then:
 
 1. Clone this repository
-2. Create a database in your SQL database 
+2. Create a database in your SQL database
 3. Import the _import to mysql.csv_ in it
 4. Change the file DBsource:
     - fill in the tags
         - username 	```<username>your username</username>```
         - password  ```<password>your password</password>```
         - database name ```<database> your database name```
-5. To run each .py file you have to write in your terminal ```python thefilethatyouwant``` - example ```python create_klstore.py``` - in your project directory. 
+5. To run each .py file you have to write in your terminal ```python thefilethatyouwant``` - example ```python create_klstore.py``` - in your project directory.
+
+In the case you want to run **aggr_klstore.py** file you can choose, **by uncomment it**, one of the values “avg/sum/count/min/max” or the python function <join_list_elements> that operates on a list of strings and returns a string. Default choice finds the max element in each list of KLstore k1 and it concatenates each list elements of KLstore k2 in one word by using the function <join_list_elements>.  
 
 **Before you run any of the .py files run the create_klstore.py file to create the klstores. After running the program, delete the kl stores and create them again to run another .py file.**
 
@@ -97,9 +99,6 @@ To delete the kl stores run the following commands
 
 ```redis-cli --scan --pattern k1:* | xargs redis-cli unlink```
 
-```redis-cli --scan --pattern k2:* | xargs redis-cli unlink ``` 
+```redis-cli --scan --pattern k2:* | xargs redis-cli unlink ```
 
 Voila!!! :blush:
-
-
-

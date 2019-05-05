@@ -39,6 +39,5 @@ def filter_klstore (name1, expression):
         print(e)
 
 if __name__ == '__main__':
-
     filter_klstore('k1','len(value) < 1')
     filter_klstore('k2','len(value) < 2')
