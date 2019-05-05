@@ -56,7 +56,7 @@ This file joins 2 or more kl stores.
 
 ## Getting started
 
-Would you like to install Hom-e and run it locally? Easy-peasy! The only thing that you have to do is to follow our instructions and everything will work properly on your machine!
+Would you like to install the project and run it locally? Easy-peasy! The only thing that you have to do is to follow our instructions and everything will work properly on your machine!
 
 ## Linux
 
@@ -83,14 +83,21 @@ After installing the above requirements then:
 
 1. Clone this repository
 2. Create a database in your SQL database 
-4. Import the _import to mysql.csv_ in it
-5. Change the file DBsource:
+3. Import the _import to mysql.csv_ in it
+4. Change the file DBsource:
     - fill in the tags
         - username 	```<username>your username</username>```
         - password  ```<password>your password</password>```
         - database name ```<database> your database name```
-6. To run each .py file you have to write in your terminal  ```python thefilethatyouwant_klstore.py```in your project directory. 
-**First run the create_klstore.py file to create the klstores.**
+5. To run each .py file you have to write in your terminal ```python thefilethatyouwant``` - example ```python create_klstore.py``` - in your project directory. 
+
+**Before you run any of the .py files run the create_klstore.py file to create the klstores. After running the program, delete the kl stores and create them again to run another .py file.**
+
+To delete the kl stores run the following commands
+
+```redis-cli --scan --pattern k1:* | xargs redis-cli unlink```
+
+```redis-cli --scan --pattern k2:* | xargs redis-cli unlink ``` 
 
 Voila!!! :blush:
 
