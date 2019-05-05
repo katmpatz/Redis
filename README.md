@@ -91,7 +91,9 @@ After installing the above requirements then:
         - database name ```<database> your database name```
 5. To run each .py file you have to write in your terminal ```python thefilethatyouwant``` - example ```python create_klstore.py``` - in your project directory.
 
-In the case you want to run **aggr_klstore.py** file you can choose, **by uncomment it**, one of the values “avg/sum/count/min/max” or the python function join_list_elements(). Default choice finds the max element in each list of KLstore k1 and it concatenates each list elements of KLstore k2 in one word by using the function join_list_elements().  
+In case you want to run **aggr_klstore.py** file you can choose, **by uncomment it in main method**, one of the values “avg/sum/count/min/max” or the python function join_list_elements(). Default choice finds the max element in each list of KLstore k1 and it concatenates each list elements of KLstore k2 in one word by using the function join_list_elements().  
+
+In case you want to run **apply_klstore.py** file you can choose only one klstore at a time so you need to run the programm by comment one call of function and uncomment the other in main.
 
 **Before you run any of the .py files run the create_klstore.py file to create the klstores. After running the program, delete the kl stores and create them again to run another .py file.**
 
