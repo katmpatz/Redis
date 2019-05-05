@@ -5,6 +5,7 @@
 #redis-cli --scan --pattern k2:* | xargs redis-cli unlink
 
 import redis
+import re
 
 # define our connection information for Redis
 # Replaces with your configuration information
@@ -34,7 +35,7 @@ def create_klstores(name, dictionary):
         print(e)
 
 
-def projsel_klstore(output_name, klstores_names):
+def projsel_klstore(output_name, klstores_names, expression):
 
     # create the Redis Connection object
     try:
@@ -43,13 +44,12 @@ def projsel_klstore(output_name, klstores_names):
         # using the default encoding utf-8.  This is client specific.
         r = redis.StrictRedis(host=redis_host, port=redis_port, password=redis_password, decode_responses=True)
 
+        #We use a python dictionary in order to create the new klstore
         new_kl = {}
         for name in klstores_names:
             # get the keys in each klstore
             keys = r.keys(name + ':*')
-            # remove klstore name from keys
-            # keys = [k[len(name) + 1:] for k in kname]
-            print(keys)
+
             for key in keys:
                 for value in r.lrange(key,0,-1):
                     if key[len(name) + 1:] not in new_kl:
@@ -57,8 +57,22 @@ def projsel_klstore(output_name, klstores_names):
                         new_kl[key[len(name) + 1:]] = [value]
                     else:
                         new_kl[key[len(name) + 1:]].append(value)
-        print(new_kl)
-        create_klstores(output_name, new_kl)                                                                                                                                                   )
+
+        #find ##keys in the expression and replace them
+        expression = expression.replace("##key", "key")
+
+        #find values in the expression
+        expression_values = re.findall('##\w+', expression)
+
+        #replace ##values in the expression
+        # All values in the expression have the same name, so we choose expression_values[0]
+        # For the scope of this assignment, we randomly choose the first element of each list of values.
+        # For the scope of this assignment value is number and we tranfsorm it from string to integer
+        expression = expression.replace(expression_values[0], "int(value[0])")
+        new_kl = {key: value for key, value in new_kl.items() if eval(expression)}
+
+        #this method transform a dictionary to klstore
+        create_klstores(output_name, new_kl)
 
 
     except Exception as e:
@@ -68,4 +82,4 @@ if __name__ == '__main__':
     # create_klstores('ks1', kl_store1)
     # create_klstores('ks2', kl_store2)
     # create_klstores('ks3', kl_store3)
-    projsel_klstore('new_klstore', ['ks1','ks2','ks3'])
+    projsel_klstore('new_klstore', ['ks1','ks2','ks3'], "##key <> 't22' and ##age > 90" )
