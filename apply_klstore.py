@@ -42,5 +42,5 @@ def apply_klstore (name1, func):
         print(e)
 
 if __name__ == '__main__':
-    #apply_klstore('k1',add_AB_in_each_value)
+    apply_klstore('k1',add_AB_in_each_value)
     #apply_klstore('k2',add_AB_in_each_value)
