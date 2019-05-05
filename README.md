@@ -83,16 +83,17 @@ After installing the above requirements then:
 
 1. Clone this repository
 2. Create a database in your SQL database 
-4. Import the _import to mysql.csv_ in it
-5. Change the file DBsource:
+3. Import the _import to mysql.csv_ in it
+4. Change the file DBsource:
     - fill in the tags
         - username 	```<username>your username</username>```
         - password  ```<password>your password</password>```
         - database name ```<database> your database name```
-6. To run each .py file you have to write in your terminal ```python thefilethatyouwant``` - example ```python create_klstore.py``` - in your project directory. 
+5. To run each .py file you have to write in your terminal ```python thefilethatyouwant``` - example ```python create_klstore.py``` - in your project directory. 
+
 **Before you run any of the .py files run the create_klstore.py file to create the klstores. After running the program, delete the kl stores and create them again to run another .py file.**
 
-7.To delete the kl stores run the following commands
+6.To delete the kl stores run the following commands
 
 ```redis-cli --scan --pattern k1:* | xargs redis-cli unlink```
 
