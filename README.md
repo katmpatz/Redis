@@ -93,7 +93,7 @@ After installing the above requirements then:
 
 **Before you run any of the .py files run the create_klstore.py file to create the klstores. After running the program, delete the kl stores and create them again to run another .py file.**
 
-6.To delete the kl stores run the following commands
+To delete the kl stores run the following commands
 
 ```redis-cli --scan --pattern k1:* | xargs redis-cli unlink```
 
