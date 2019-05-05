@@ -50,7 +50,7 @@ This file gets 2 klstores and transform the one with the values of the other.
 
 This file aggregates each list of a kl store according to the specified aggregate.
 
-**projSel_klstore.py**
+**projsel_klstore.py**
 
 This file joins 2 or more kl stores and applies a filtering condition for the new klstore.
 
